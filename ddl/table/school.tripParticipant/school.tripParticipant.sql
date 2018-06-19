@@ -42,5 +42,37 @@ begin
 end
 go
 
+declare @table sysname
+declare @reference sysname
 
+set @table	= '[school].[tripParticipant]'
+set @reference = '[school].[trip]'
+
+if not exists
+(
+	select *
+
+	from   sys.foreign_keys tblSFK
+
+	where   tblSFK.parent_object_id = object_id(@table)
+
+	and     tblSFK.referenced_object_id = object_id(@reference)
+
+)
+begin
+
+	alter table [school].[tripParticipant]
+		add constraint [FK_TripParticipant_Trip]
+			foreign key
+			(
+				[tripID]
+			)
+			references [school].[trip]
+			(
+				[id]
+			)
+
+end
+
+go
 

@@ -22,5 +22,4 @@ select '000-00-1564', 'Christopher', 'Jefferies'
 union all
 select '000-00-1566', 'Tanya', 'Roberts'
 union all
--- student, faculty
 select '000-00-1568', 'Paul', 'Washer'

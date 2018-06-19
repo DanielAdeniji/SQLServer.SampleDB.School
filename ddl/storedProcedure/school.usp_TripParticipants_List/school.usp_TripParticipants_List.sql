@@ -79,7 +79,7 @@ begin
 
     inner join cteSchoolBody cteSB
         on  tblTP.participantID = cteSB.id
-	    and tblTP.[partipantType] = cteSB.[poolID]
+	    -- and tblTP.[partipantType] = cteSB.[poolID]
 		 
     where (
 
