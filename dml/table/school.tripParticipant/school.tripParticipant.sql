@@ -21,7 +21,7 @@ insert into [school].[tripParticipant]
 (
      [tripID]
    , [participantID]
-   , [partipantType]
+   , [participantTypeID]
    , [dateAdded]
 )
 

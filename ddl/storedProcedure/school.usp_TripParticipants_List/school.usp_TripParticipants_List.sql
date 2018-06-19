@@ -23,14 +23,14 @@ begin
 
 
     ; with cteSchoolBody
-	(
+    (
           id
         , identifier
         , firstname
         , lastname
-		, [poolID]
+        , [poolID]
         , [pool]
-	)
+    )
     as
     (
 
@@ -39,7 +39,7 @@ begin
                , tblS.identifier
                , tblS.firstname
                , tblS.lastname
-			   , [poolID] = 1
+               , [poolID] = 1
                , [pool] = 'Student'
 
         from   [school].[student] tblS
@@ -51,7 +51,7 @@ begin
                , tblF.identifier
                , tblF.firstname
                , tblF.lastname
-			   , [poolID] = 2
+               , [poolID] = 2
                , [pool] = 'Faculty'
 
         from   [school].[faculty] tblF
@@ -79,8 +79,10 @@ begin
 
     inner join cteSchoolBody cteSB
         on  tblTP.participantID = cteSB.id
-	    -- and tblTP.[partipantType] = cteSB.[poolID]
-		 
+        /*
+            intentionally left of participantTypeID
+            and tblTP.[participantTypeID] = cteSB.[poolID]
+        */ 
     where (
 
             ( 

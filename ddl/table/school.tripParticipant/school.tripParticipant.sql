@@ -19,11 +19,11 @@ begin
 
 	create table [school].[tripParticipant] 
 	(
-	      [tripID]         bigint  not null
+	      [tripID]            bigint  not null
 
-		, [participantID] bigint  not null
+		, [participantID]     bigint  not null
 		
-		, [partipantType] tinyint not null
+		, [participantTypeID] tinyint not null
 	
 	    , [dateAdded]     datetime not null
 		    constraint [school.tripParticipant.dateAdded]
@@ -34,7 +34,7 @@ begin
 			(
 			      [tripID]
 				, [participantID]
-				, [partipantType]
+				, [participantTypeID]
 
 			)
 
